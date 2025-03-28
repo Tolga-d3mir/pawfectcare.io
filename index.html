@@ -3,79 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Emotion Game</title>
+    <title>Start pagina</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="body">
+<body>
     <img class="paw" src="dogs/SVG/paw.svg" alt="">
     <img class="paw1" src="dogs/SVG/paw1.svg" alt="">
 
-    <a href="start.html">
-        <img class="pijl" src="dogs/SVG/pijl.svg" alt="">
-    </a>
+    <h2>Welcome to Pawfect Care</h2>
+    <h4>Here you can look after your own dog!</h4>
+    <p class="starttext">To get started give him a name.</p>
 
+    <div class="dog-name">
+        <input type="text" id="name-tag" class="name-tag" placeholder="Enter dog's name">
+        <div class="buttons">
+            <button class="help-button">Help</button>
 
-    <button class="achtergrondkleuren-knop" id="background">Change the background</button>
-
-
-
-
-    <section class="dog">
-        <div class="name-tag-container">
-            <h2 id="dog-name-display">My Dog</h2>
-        </div>
-
-        <div class="animations">
-            <img id="bubbles" src="Bubbles Breaking Sticker by Dinaaaaaah - Find & Share on GIPHY.gif" style="display: none;">
-            <img id="dog-food" src="brokkels.gif" style="display: none;">
-            <img id="smoke" src="smoke.gif" style="display: none;">
-            <img id="tennis-ball" src="ball.gif" style="display: none;">
-
+            <button id="save-name-btn" class="start-button">Save Name</button>
         </div>
         
+        <div class="cta">
+            <button id="start-game-btn" class="start-button">Start!</button>
+        </div>
 
-        <div class="dog-image">
-            <img id="angry-dog" src="dogs/SVG/angry-dog.svg" alt="angry-dog" style="display: none;">
-            <img id="happy-dog" src="dogs/SVG/happy-dog.svg" alt="happy-dog" style="display: none;">
-            <img id="normal-dog" src="dogs/SVG/normal-dog.svg" alt="normal-dog" style="display: none;">
-            <img id="sad-dog" src="dogs/SVG/sad-dog.svg" alt="sad-dog" style="display: none;">
-            <img id="sleepy-dog" src="dogs/SVG/sleepy-dog.svg" alt="sleepy-dog" style="display: none;">
-            <img id="surprised-dog" src="dogs/SVG/surprized-dog.svg" alt="surprised-dog" style="display: none;">
-            <img id="why-dog" src="dogs/SVG/why-dog.svg" alt="why-dog" style="display: none;">
-            <img id="tired-dog" src="dogs/SVG/tired-dog.svg" alt="tired-dog" style="display: none;">
-            <img id="playfull-dog" src="dogs/SVG/playfull-dog.svg" alt="playfull-dog" style="display: none;">
-        </div>
-        <p id="dog-message">I'm a dog</p>
-    </section>
-
-    <section class="items">
-        <div class="card">
-            <img id="ball" src="dogs/SVG/ball.svg" alt="ball">
-            <p>Play with me!</p>
-        </div>
-        <div class="card">
-            <img id="brush" src="dogs/SVG/Middel 13.svg" alt="brush">
-            <p>Brush me!</p>
-        </div>
-        <div class="card">
-            <img id="food" src="dogs/SVG/dogfood.svg" alt="dog food">
-            <p>Feed me!</p>
-        </div>
-        <div class="card">
-            <img id="soap" src="dogs/SVG/soap.svg" alt="soap">
-            <p>Wash me!</p>
-        </div>
-    </section>
-
-    <button id="new-emotion">Give me a new emotion!</button>
-
-    <script src="main.js"></script>
+    </div>
     
+    
+
     <script>
-        // Load the dog name when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedName = localStorage.getItem('dogName') || 'My Dog';
-            document.getElementById('dog-name-display').textContent = savedName;
+        document.getElementById('save-name-btn').addEventListener('click', function() {
+            const dogName = document.getElementById('name-tag').value.trim();
+            localStorage.setItem('dogName', dogName || 'My Dog');
+            alert(`Name saved as: ${dogName || 'My Dog'}`);
+        });
+        
+        document.getElementById('start-game-btn').addEventListener('click', function() {
+            window.location.href = 'dog.html';
         });
     </script>
 </body>
