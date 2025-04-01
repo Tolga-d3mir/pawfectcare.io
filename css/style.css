@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "Little Paws";
+    src: url("../fonts/little-paws/LittlePaws-8MZqZ.ttf") format("truetype"),
+  }
+  
+
 body {
-    font-family: 'little Paws';
+    font-family: 'little Paws', sans-serif;
     background-color: hsl(0, 100%, 71%);
     transition: background 0.3s;
 }
